@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'dashboards/index'
+
   resources :jobbers do
   #->Prelang (voting/acts_as_votable)
   member do

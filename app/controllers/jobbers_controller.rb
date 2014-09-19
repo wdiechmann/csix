@@ -1,5 +1,5 @@
 class JobbersController < ApplicationController
-  before_action :set_jobber, only: [:show, :edit, :update, :destroy]
+  before_action :set_jobber, only: [:show, :edit, :update, :destroy, :vote]
 
   # GET /jobbers
   # GET /jobbers.json

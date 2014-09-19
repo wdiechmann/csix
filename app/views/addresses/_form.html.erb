@@ -1,14 +1,34 @@
-<%= simple_form_for(@address) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :street %>
-    <%= f.input :zipcode %>
-    <%= f.input :city %>
-    <%= f.input :country %>
+<%= form_for @address, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :street, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :street, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :zipcode, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :zipcode, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :city, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :city, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :country, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :country, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  addresses_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

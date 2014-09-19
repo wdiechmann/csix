@@ -1,4 +1,5 @@
 ActiveAdmin.register Jobber do
+  permit_params :first_job_at, :last_job_at
 
 
   # See permitted parameters documentation:

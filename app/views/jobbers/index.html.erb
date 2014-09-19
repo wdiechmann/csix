@@ -1,0 +1,29 @@
+<h1>Listing jobbers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First job at</th>
+      <th>Last job at</th>
+      <th>Person</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jobbers.each do |jobber| %>
+      <tr>
+        <td><%= jobber.first_job_at %></td>
+        <td><%= jobber.last_job_at %></td>
+        <td><%= jobber.person %></td>
+        <td><%= link_to 'Show', jobber %></td>
+        <td><%= link_to 'Edit', edit_jobber_path(jobber) %></td>
+        <td><%= link_to 'Destroy', jobber, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Jobber', new_jobber_path %>
